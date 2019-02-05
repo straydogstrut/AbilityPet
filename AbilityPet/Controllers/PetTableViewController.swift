@@ -10,23 +10,45 @@ import UIKit
 
 let backgroundImage = UIImageView(image: UIImage(named:"Background"))
 
+
 class PetTableViewController: UITableViewController {
     
     //MARK: Properties
     var pets = [Pet]() // declare an empty array of Pet objects
+    var filteredPets = [Pet]()
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBAction func segmentValueChanged(_ sender: Any) {
+        
+        
+        print(segmentedControl.selectedSegmentIndex)
+        if segmentedControl.selectedSegmentIndex == 1 {
+            filteredPets = pets.filter{ $0.type.contains("Cat") }
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            filteredPets = pets.filter { $0.type.contains("Dog")}
+        } else {
+            filteredPets = pets
+        }
+        
+        filteredPets.forEach { print($0) }
+        self.tableView.reloadData()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         backgroundImage.contentMode = .scaleAspectFill
-     //   tableView.backgroundView = backgroundImage
+        
         loadSamplePets()
+        filteredPets = pets
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
     // MARK: - Table view data source
@@ -38,7 +60,7 @@ class PetTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return pets.count
+        return filteredPets.count
     }
 
     
@@ -52,7 +74,7 @@ class PetTableViewController: UITableViewController {
         }
         
         // fetches the appropriate pet
-        let pet = pets[indexPath.row]
+        let pet = filteredPets[indexPath.row]
         
         cell.nameLabel.text = pet.name
         cell.photoImageView.image = pet.photo
@@ -113,10 +135,11 @@ class PetTableViewController: UITableViewController {
             // Get in touch with the DetailViewController
             let detailViewController = segue.destination as! PetDetailsViewController
             // Pass on the data to the Detail ViewController by setting it's indexPathRow value
-            detailViewController.petName = pets[index!].name
-            detailViewController.petImage = pets[index!].photo!
-            detailViewController.petDescription = pets[index!].description
-            detailViewController.petStats = pets[index!].stats
+            detailViewController.petName = filteredPets[index!].name
+            detailViewController.petImage = filteredPets[index!].photo!
+            detailViewController.petDescription = filteredPets[index!].description
+            detailViewController.petStats = filteredPets[index!].stats
+            
         }
         
     }
@@ -133,6 +156,7 @@ class PetTableViewController: UITableViewController {
                  
                     // grab the pet attributes from the dictionary
                     let petName = dict.object(forKey:"name") as! String
+                    let petType = dict.object(forKey: "type") as! String
                     let petLocation = dict.object(forKey: "location") as! String
                     let photoString = dict.object(forKey:"photo") as! String
                     let petPhoto:UIImage? = UIImage(named: photoString) ?? UIImage(named:"noPetImage")
@@ -140,7 +164,7 @@ class PetTableViewController: UITableViewController {
                     let petStats = dict.object(forKey:"stats") as! NSDictionary
                     
                     // populate the pets array with Pet objects
-                    pets.append(Pet(name: petName, location: petLocation, photo: petPhoto, description: petDesc, stats: petStats)!)
+                    pets.append(Pet(name: petName, type: petType, location: petLocation, photo: petPhoto, description: petDesc, stats: petStats)!)
                    
                   //   print(dict.object(forKey:"description") as! String)
                 }

@@ -15,6 +15,12 @@ class PetDetailsViewController: UIViewController {
     var petName = String()
     var petDescription = String()
     var petStats = NSDictionary()
+    var petLiked = Bool()
+    
+    @IBOutlet weak var petLikeButton: UIButton!
+    @IBAction func petLikeButtonTouched(_ sender: UIButton){
+        petLiked(!petLiked)
+    }
     
     @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
@@ -42,6 +48,8 @@ class PetDetailsViewController: UIViewController {
         petImageView.image = petImage
         petNameLabel.text = "Hi, I'm " + (petName)
         petDescriptionTextView.text = petDescription
+        petLiked(false)
+        
         
         let petGender = petStats.object(forKey: "gender") as! String
         let petBreed = petStats.object(forKey: "breed") as! String
@@ -53,22 +61,22 @@ class PetDetailsViewController: UIViewController {
                                 "Age: " + petAge + "\n" +
                                 "Personality: " + petPersonality
         
-      
-        
-        // Do any additional setup after loading the view.
-       
-      //  contactButton.accessibilityTraits = UIAccessibilityTraits.none
+        }
+    
+    func petLiked(_ liked: Bool){
+        if liked {
+            petLikeButton.setImage(UIImage(named:"Like_Selected"), for: .normal)
+            petLiked = true
+        } else {
+            petLikeButton.setImage(UIImage(named:"Like_Unselected"), for: .normal)
+            petLiked = false
+        }
+    }
+
+}
+
+extension PetDetailsViewController {
+    func applyAccessibility(){
         contactButton.accessibilityHint = "Opens Mail"
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -19,6 +19,7 @@ class PetTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         // photoImageView.isAccessibilityElement = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

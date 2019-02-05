@@ -12,15 +12,17 @@ class Pet {
     
     //MARK: Properties
     var name: String
+    var type: String
     var location: String
     var photo: UIImage?
     var description : String
     var stats : NSDictionary
     
     //MARK: Initialisation
-    init?(name: String, location: String, photo: UIImage?, description: String, stats: NSDictionary){
+    init?(name: String, type: String, location: String, photo: UIImage?, description: String, stats: NSDictionary){
         // initialise stored properties
         self.name = name
+        self.type = type
         self.location = location
         self.photo = photo
         self.description = description
