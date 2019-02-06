@@ -60,18 +60,19 @@ class PetDetailsViewController: UIViewController {
                                 "Breed: " + petBreed + "\n" +
                                 "Age: " + petAge + "\n" +
                                 "Personality: " + petPersonality
-        
+       
         }
     
    // MARK: Private methods
     func petLiked(_ liked: Bool){
         if liked {
-            petLikeButton.setImage(UIImage(named:"Like_Selected"), for: .normal)
+            petLikeButton.setImage(UIImage(named:"heart_red"), for: .normal)
             petLiked = true
         } else {
-            petLikeButton.setImage(UIImage(named:"Like_Unselected"), for: .normal)
+            petLikeButton.setImage(UIImage(named:"heart_white"), for: .normal)
             petLiked = false
         }
+        applyAccessibility()
     }
 
 }
@@ -80,6 +81,14 @@ class PetDetailsViewController: UIViewController {
 
 extension PetDetailsViewController {
     func applyAccessibility(){
+        
+        if petLiked {
+            petLikeButton.accessibilityLabel = "Liked"
+            petLikeButton.accessibilityTraits = UIAccessibilityTraits.button
+        } else {
+            petLikeButton.accessibilityLabel = "Not Liked"
+            petLikeButton.accessibilityTraits = UIAccessibilityTraits.button
+        }
         contactButton.accessibilityHint = "Opens Mail"
     }
 }

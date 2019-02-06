@@ -30,6 +30,6 @@ class PetTableViewCell: UITableViewCell {
 
 extension PetTableViewCell {
     func applyAccessibility(){
-        photoImageView.isAccessibilityElement = true
+        
     }
 }

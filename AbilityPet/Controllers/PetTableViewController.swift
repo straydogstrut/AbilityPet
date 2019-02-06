@@ -29,6 +29,7 @@ class PetTableViewController: UITableViewController {
         }
     
         self.tableView.reloadData()
+        applyAccessibility()
     }
     
     

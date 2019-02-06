@@ -27,7 +27,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-Zw-46Z" userLabel="Photo Image View">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chocolat" translatesAutoresizingMaskIntoConstraints="NO" id="xNg-Zw-46Z" userLabel="Photo Image View">
                                             <rect key="frame" x="0.0" y="-0.5" width="90" height="90.5"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <bool key="isElement" value="YES"/>
@@ -84,7 +84,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dI5-eh-WXL">
-                        <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="MZi-6s-qut">
                             <rect key="frame" x="87.5" y="7" width="200" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -119,6 +118,10 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-25-QCX">
                                         <rect key="frame" x="20" y="0.0" width="375" height="275"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEq-qb-g5X">
                                         <rect key="frame" x="32" y="291" width="351" height="21"/>
@@ -182,7 +185,7 @@ Personality:</string>
                                             <constraint firstAttribute="height" constant="64" id="X5O-5Q-ezt"/>
                                             <constraint firstAttribute="width" constant="64" id="y6B-r0-nHA"/>
                                         </constraints>
-                                        <state key="normal" image="Like_Unselected"/>
+                                        <state key="normal" image="heart_white"/>
                                         <connections>
                                             <action selector="petLikeButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gSw-Ne-EtM"/>
                                         </connections>
@@ -408,7 +411,8 @@ If you're looking to make a new friend, take a look at our listings to find out 
     </scenes>
     <resources>
         <image name="Background" width="135.1199951171875" height="322.55999755859375"/>
-        <image name="Like_Unselected" width="24" height="24"/>
+        <image name="Chocolat" width="517" height="517"/>
         <image name="Logo" width="135.1199951171875" height="42.479999542236328"/>
+        <image name="heart_white" width="24" height="24"/>
     </resources>
 </document>
