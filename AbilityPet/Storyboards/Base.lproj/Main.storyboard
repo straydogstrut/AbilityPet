@@ -136,7 +136,7 @@
                                         </constraints>
                                         <string key="text">This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-23-noN" userLabel="Pet Stats Text View">
@@ -151,7 +151,7 @@ Age:
 Breed:
 Personality:</string>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZE-rW-Mpi">
@@ -164,8 +164,8 @@ Personality:</string>
                                         <rect key="frame" x="147.5" y="529" width="120" height="50"/>
                                         <color key="backgroundColor" red="0.52695208790000003" green="0.76275116210000005" blue="0.3190083802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="MGa-sk-Otk"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ajY-yc-Cy3"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="12X-bu-7EA"/>
+                                            <constraint firstAttribute="height" constant="50" id="Vis-kQ-fA7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,32 +190,32 @@ Personality:</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NeF-25-QCX" secondAttribute="trailing" constant="20" id="1dg-YD-DHC"/>
-                                    <constraint firstItem="agK-jb-DXX" firstAttribute="centerX" secondItem="Sda-CK-3QU" secondAttribute="centerX" id="3lb-Ji-pK2"/>
                                     <constraint firstItem="3ZE-rW-Mpi" firstAttribute="leading" secondItem="pYe-23-noN" secondAttribute="leading" id="6aa-t1-ZEI"/>
                                     <constraint firstItem="5pF-WS-UCg" firstAttribute="trailing" secondItem="pYe-23-noN" secondAttribute="trailing" id="7eI-ei-jlc"/>
                                     <constraint firstItem="3ZE-rW-Mpi" firstAttribute="top" secondItem="5pF-WS-UCg" secondAttribute="bottom" constant="8" id="9aN-kM-7uX"/>
-                                    <constraint firstAttribute="bottom" secondItem="agK-jb-DXX" secondAttribute="bottom" constant="24" id="B6I-P8-e0G"/>
-                                    <constraint firstItem="agK-jb-DXX" firstAttribute="top" secondItem="pYe-23-noN" secondAttribute="bottom" constant="8" symbolic="YES" id="Bs5-n3-7By"/>
                                     <constraint firstItem="5pF-WS-UCg" firstAttribute="leading" secondItem="3ZE-rW-Mpi" secondAttribute="leading" id="FDh-SC-VvW"/>
                                     <constraint firstItem="nEq-qb-g5X" firstAttribute="leading" secondItem="5pF-WS-UCg" secondAttribute="leading" id="IYv-ZK-YSi"/>
                                     <constraint firstItem="Jrz-Mp-aaT" firstAttribute="top" secondItem="Sda-CK-3QU" secondAttribute="topMargin" id="K15-F0-Ppk"/>
                                     <constraint firstItem="pYe-23-noN" firstAttribute="top" secondItem="3ZE-rW-Mpi" secondAttribute="bottom" constant="8" symbolic="YES" id="NPL-Tv-q4s"/>
                                     <constraint firstItem="3ZE-rW-Mpi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5pF-WS-UCg" secondAttribute="leading" id="OM5-kY-dIn"/>
-                                    <constraint firstItem="agK-jb-DXX" firstAttribute="centerX" secondItem="NeF-25-QCX" secondAttribute="centerX" id="Pna-yw-avm"/>
                                     <constraint firstItem="nEq-qb-g5X" firstAttribute="centerX" secondItem="NeF-25-QCX" secondAttribute="centerX" id="SGT-cB-qfp"/>
                                     <constraint firstItem="pYe-23-noN" firstAttribute="top" secondItem="3ZE-rW-Mpi" secondAttribute="bottom" constant="8" id="U5i-bZ-G62"/>
                                     <constraint firstItem="3ZE-rW-Mpi" firstAttribute="top" secondItem="5pF-WS-UCg" secondAttribute="bottom" constant="8" id="YMC-SX-W1a"/>
                                     <constraint firstItem="nEq-qb-g5X" firstAttribute="top" secondItem="NeF-25-QCX" secondAttribute="bottom" constant="16" id="YTy-vM-BdI"/>
                                     <constraint firstItem="3ZE-rW-Mpi" firstAttribute="top" secondItem="5pF-WS-UCg" secondAttribute="bottom" constant="8" symbolic="YES" id="YnI-sm-s6S"/>
                                     <constraint firstItem="NeF-25-QCX" firstAttribute="leading" secondItem="Sda-CK-3QU" secondAttribute="leading" constant="20" id="a9Z-zD-47v"/>
+                                    <constraint firstItem="agK-jb-DXX" firstAttribute="centerX" secondItem="pYe-23-noN" secondAttribute="centerX" id="aOA-aK-j1f"/>
+                                    <constraint firstItem="agK-jb-DXX" firstAttribute="centerX" secondItem="Sda-CK-3QU" secondAttribute="centerX" id="cbR-PX-EYl"/>
                                     <constraint firstItem="5pF-WS-UCg" firstAttribute="trailing" secondItem="3ZE-rW-Mpi" secondAttribute="trailing" id="eIP-ib-24T"/>
                                     <constraint firstItem="nEq-qb-g5X" firstAttribute="centerY" secondItem="Sda-CK-3QU" secondAttribute="centerY" id="fQH-gb-wB7"/>
                                     <constraint firstItem="nEq-qb-g5X" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5pF-WS-UCg" secondAttribute="leading" id="heG-7N-cgg"/>
+                                    <constraint firstItem="agK-jb-DXX" firstAttribute="top" secondItem="pYe-23-noN" secondAttribute="bottom" constant="8" symbolic="YES" id="o5E-n5-0xh"/>
                                     <constraint firstItem="nEq-qb-g5X" firstAttribute="trailing" secondItem="5pF-WS-UCg" secondAttribute="trailing" id="pWH-Ce-5iQ"/>
                                     <constraint firstItem="Jrz-Mp-aaT" firstAttribute="trailing" secondItem="nEq-qb-g5X" secondAttribute="trailing" id="pm7-jy-VPx"/>
                                     <constraint firstItem="NeF-25-QCX" firstAttribute="top" secondItem="Sda-CK-3QU" secondAttribute="top" id="qMo-Eu-BqA"/>
                                     <constraint firstItem="5pF-WS-UCg" firstAttribute="top" secondItem="nEq-qb-g5X" secondAttribute="bottom" constant="8" symbolic="YES" id="qSr-7n-YIS"/>
                                     <constraint firstItem="3ZE-rW-Mpi" firstAttribute="top" secondItem="5pF-WS-UCg" secondAttribute="bottom" constant="8" id="tcN-XP-4aj"/>
+                                    <constraint firstAttribute="bottom" secondItem="agK-jb-DXX" secondAttribute="bottom" constant="12" id="zB2-rr-qKK"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -250,7 +250,7 @@ Personality:</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUK-gi-prf" customClass="RoundedButton" customModule="AbilityPet" customModuleProvider="target">
-                                <rect key="frame" x="127" y="597" width="120" height="50"/>
+                                <rect key="frame" x="127" y="597" width="119" height="50"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.66274509800000003" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WUr-jX-cxl"/>
@@ -263,22 +263,29 @@ Personality:</string>
                                     <action selector="dismissModal:" destination="xf3-B0-RHo" eventType="touchUpInside" id="wac-TK-3Xs"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-Ae-fd5">
-                                <rect key="frame" x="16" y="66" width="343" height="272"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-Ae-fd5">
+                                <rect key="frame" x="16" y="66" width="342" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="272" id="tDK-hn-EBu"/>
+                                    <constraint firstAttribute="height" constant="523" id="tDK-hn-EBu"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <string key="text">AbilityPet specialises in finding forever homes for our four legged friends.
+
+We have centres across the country and our staff regularly make home visits to see how our previous residents are settling in to their new homes.
+
+We can offer advice on everything from caring for your new pet, registering with local vets, arranging pet insurance, and even where to find pet-friendly holidays.
+
+If you're looking to make a new friend, take a look at our listings to find out more and arrange a visit.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIP-wL-tK6">
-                                <rect key="frame" x="151" y="20" width="73" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIP-wL-tK6">
+                                <rect key="frame" x="150" y="20" width="74" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="LV0-qH-qnu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -304,7 +311,7 @@ Personality:</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwv-q3-Ncb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="C3m-3m-Cet" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-641" y="-371"/>
+            <point key="canvasLocation" x="-642.39999999999998" y="-371.06446776611699"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="ed6-CQ-rYg">
@@ -316,10 +323,6 @@ Personality:</string>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="HC7-g5-anL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="3xM-Ns-mHm"/>
-                                    <constraint firstAttribute="height" constant="603" id="qJb-3a-3dP"/>
-                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ3-Ms-jKo" userLabel="Our Pets" customClass="RoundedButton" customModule="AbilityPet" customModuleProvider="target">
                                 <rect key="frame" x="127" y="403" width="121" height="50"/>

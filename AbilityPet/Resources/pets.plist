@@ -12,7 +12,7 @@
 		<key>photo</key>
 		<string>Chocolat</string>
 		<key>description</key>
-		<string>This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
+		<string>I&apos;m a very chatty little soul who loves company and lots of opportunities to explore.</string>
 		<key>stats</key>
 		<dict>
 			<key>gender</key>
@@ -35,7 +35,7 @@
 		<key>photo</key>
 		<string>Marmalade</string>
 		<key>description</key>
-		<string>This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
+		<string>I&apos;m a bit shy but very friendly. I love sleeping on radiators.</string>
 		<key>stats</key>
 		<dict>
 			<key>gender</key>
@@ -58,7 +58,7 @@
 		<key>photo</key>
 		<string>Rory</string>
 		<key>description</key>
-		<string>This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
+		<string>I&apos;m always happy to meet new people and I love going for walks.</string>
 		<key>stats</key>
 		<dict>
 			<key>gender</key>
@@ -81,7 +81,7 @@
 		<key>photo</key>
 		<string>Georgina</string>
 		<key>description</key>
-		<string>This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
+		<string>I like to be fussed over and spending time asleep on a nice warm lap.</string>
 		<key>stats</key>
 		<dict>
 			<key>gender</key>
@@ -104,7 +104,7 @@
 		<key>photo</key>
 		<string>Flossie</string>
 		<key>description</key>
-		<string>This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
+		<string>I have a thirst for adventure and like to climb up to high places.</string>
 		<key>stats</key>
 		<dict>
 			<key>gender</key>
@@ -127,7 +127,7 @@
 		<key>photo</key>
 		<string>Cassie</string>
 		<key>description</key>
-		<string>This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
+		<string>I&apos;m very playful and energetic. I love investigating everything.</string>
 		<key>stats</key>
 		<dict>
 			<key>gender</key>
@@ -150,7 +150,7 @@
 		<key>photo</key>
 		<string>Rocky</string>
 		<key>description</key>
-		<string>This is a description about this particular pet. It includes some information about their background, their age and habits, as well as there likes and dislikes.</string>
+		<string>I&apos;m good with children and I love chasing squirrels.</string>
 		<key>stats</key>
 		<dict>
 			<key>gender</key>

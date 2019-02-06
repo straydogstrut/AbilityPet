@@ -19,7 +19,6 @@
 		6527ABFB2200D54400E90B7E /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527ABFA2200D54400E90B7E /* PetDetailsViewController.swift */; };
 		6527ABFD2201039600E90B7E /* pets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6527ABFC2201039600E90B7E /* pets.plist */; };
 		65585B9A2204748300D54250 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585B992204748300D54250 /* RoundedButton.swift */; };
-		65585B9C2204A4CD00D54250 /* DismissModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585B9B2204A4CD00D54250 /* DismissModalController.swift */; };
 		65585B9E2204A73F00D54250 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585B9D2204A73F00D54250 /* ModalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		6527ABFA2200D54400E90B7E /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
 		6527ABFC2201039600E90B7E /* pets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pets.plist; sourceTree = "<group>"; };
 		65585B992204748300D54250 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		65585B9B2204A4CD00D54250 /* DismissModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissModalController.swift; sourceTree = "<group>"; };
 		65585B9D2204A73F00D54250 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +118,6 @@
 				650427CD21FF483100B43A3E /* PetTableViewController.swift */,
 				6527ABFA2200D54400E90B7E /* PetDetailsViewController.swift */,
 				65585B9D2204A73F00D54250 /* ModalViewController.swift */,
-				65585B9B2204A4CD00D54250 /* DismissModalController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -266,7 +263,6 @@
 				6527ABFB2200D54400E90B7E /* PetDetailsViewController.swift in Sources */,
 				650427AE21FF458D00B43A3E /* WelcomeViewController.swift in Sources */,
 				650427CC21FF45EF00B43A3E /* PetTableViewCell.swift in Sources */,
-				65585B9C2204A4CD00D54250 /* DismissModalController.swift in Sources */,
 				65585B9A2204748300D54250 /* RoundedButton.swift in Sources */,
 				650427AC21FF458D00B43A3E /* AppDelegate.swift in Sources */,
 				65585B9E2204A73F00D54250 /* ModalViewController.swift in Sources */,
@@ -442,7 +438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abilitynet.AbilityPet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,7 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abilitynet.AbilityPet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

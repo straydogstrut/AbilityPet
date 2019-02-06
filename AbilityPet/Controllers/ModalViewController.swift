@@ -21,6 +21,8 @@ class ModalViewController: UIViewController {
     
 }
 
+// MARK: Accessibility
+
 extension ModalViewController {
     func applyAccessibility(){
         

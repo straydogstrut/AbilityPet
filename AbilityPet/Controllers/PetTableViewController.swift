@@ -8,29 +8,26 @@
 
 import UIKit
 
-let backgroundImage = UIImageView(image: UIImage(named:"Background"))
-
 
 class PetTableViewController: UITableViewController {
     
-    //MARK: Properties
-    var pets = [Pet]() // declare an empty array of Pet objects
+    // MARK: Properties
+    let backgroundImage = UIImageView(image: UIImage(named:"Background"))
+    var allPets = [Pet]() // declare an empty array of Pet objects
     var filteredPets = [Pet]()
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func segmentValueChanged(_ sender: Any) {
         
-        
-        print(segmentedControl.selectedSegmentIndex)
+        // filter table data depending on segment selected
         if segmentedControl.selectedSegmentIndex == 1 {
-            filteredPets = pets.filter{ $0.type.contains("Cat") }
+            filteredPets = allPets.filter{ $0.type.contains("Cat") }
         } else if segmentedControl.selectedSegmentIndex == 2 {
-            filteredPets = pets.filter { $0.type.contains("Dog")}
+            filteredPets = allPets.filter { $0.type.contains("Dog")}
         } else {
-            filteredPets = pets
+            filteredPets = allPets
         }
-        
-        filteredPets.forEach { print($0) }
+    
         self.tableView.reloadData()
     }
     
@@ -40,30 +37,23 @@ class PetTableViewController: UITableViewController {
 
         backgroundImage.contentMode = .scaleAspectFill
         
-        loadSamplePets()
-        filteredPets = pets
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadPetsFromPlist()
+        filteredPets = allPets // show all pets by default
         
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        // return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        // return the number of rows
         return filteredPets.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // table view cells are reused and should be dequeued using a cellIdentifier
@@ -83,71 +73,31 @@ class PetTableViewController: UITableViewController {
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     // MARK: - Navigation
-    let petDetailSequeIdentifier = "showPetDetails"
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let petDetailSequeIdentifier = "showPetDetails"
+        
         if segue.identifier == petDetailSequeIdentifier {
             // Get the index path from the cell that was tapped
             let indexPath = tableView.indexPathForSelectedRow
             // Get the Row of the Index Path and set as index
             let index = indexPath?.row
-            // Get in touch with the DetailViewController
+            // Get the new view controller using segue.destination
             let detailViewController = segue.destination as! PetDetailsViewController
-            // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+            // Pass on the data to the Detail ViewController
             detailViewController.petName = filteredPets[index!].name
             detailViewController.petImage = filteredPets[index!].photo!
             detailViewController.petDescription = filteredPets[index!].description
             detailViewController.petStats = filteredPets[index!].stats
-            
         }
         
     }
     
-
     
-    //MARK: Private Methods
-    func loadSamplePets(){
+    // MARK: Private Methods
+    func loadPetsFromPlist(){
         
        // get the array of dictionaries from the plist
         if let path = Bundle.main.path(forResource: "pets", ofType: "plist"){
@@ -164,13 +114,19 @@ class PetTableViewController: UITableViewController {
                     let petStats = dict.object(forKey:"stats") as! NSDictionary
                     
                     // populate the pets array with Pet objects
-                    pets.append(Pet(name: petName, type: petType, location: petLocation, photo: petPhoto, description: petDesc, stats: petStats)!)
-                   
-                  //   print(dict.object(forKey:"description") as! String)
+                    allPets.append(Pet(name: petName, type: petType, location: petLocation, photo: petPhoto, description: petDesc, stats: petStats)!)
                 }
             }
         }
         
     }
  
+}
+
+// MARK: Accessibility
+extension PetTableViewController {
+    func applyAccessibility(){
+        // apply accessibility code here
+        
+    }
 }

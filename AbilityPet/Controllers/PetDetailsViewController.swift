@@ -63,6 +63,7 @@ class PetDetailsViewController: UIViewController {
         
         }
     
+   // MARK: Private methods
     func petLiked(_ liked: Bool){
         if liked {
             petLikeButton.setImage(UIImage(named:"Like_Selected"), for: .normal)
@@ -74,6 +75,8 @@ class PetDetailsViewController: UIViewController {
     }
 
 }
+
+// MARK: Accessibility
 
 extension PetDetailsViewController {
     func applyAccessibility(){

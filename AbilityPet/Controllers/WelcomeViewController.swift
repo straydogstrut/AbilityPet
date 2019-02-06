@@ -10,7 +10,6 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +19,11 @@ class WelcomeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
-
 }
 
+extension WelcomeViewController {
+    func applyAccessibility(){
+        // apply accessibility code here
+        
+    }
+}
