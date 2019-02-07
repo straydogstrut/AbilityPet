@@ -20,6 +20,7 @@
 		6527ABFD2201039600E90B7E /* pets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6527ABFC2201039600E90B7E /* pets.plist */; };
 		65585B9A2204748300D54250 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585B992204748300D54250 /* RoundedButton.swift */; };
 		65585B9E2204A73F00D54250 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585B9D2204A73F00D54250 /* ModalViewController.swift */; };
+		65CC201B220CA8C50040EE74 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC201A220CA8C50040EE74 /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		6527ABFC2201039600E90B7E /* pets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pets.plist; sourceTree = "<group>"; };
 		65585B992204748300D54250 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		65585B9D2204A73F00D54250 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		65CC201A220CA8C50040EE74 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = AbilityPet/Controllers/ContactViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				650427AD21FF458D00B43A3E /* WelcomeViewController.swift */,
+				65CC201A220CA8C50040EE74 /* ContactViewController.swift */,
 				650427CD21FF483100B43A3E /* PetTableViewController.swift */,
 				6527ABFA2200D54400E90B7E /* PetDetailsViewController.swift */,
 				65585B9D2204A73F00D54250 /* ModalViewController.swift */,
@@ -264,6 +267,7 @@
 				650427AE21FF458D00B43A3E /* WelcomeViewController.swift in Sources */,
 				650427CC21FF45EF00B43A3E /* PetTableViewCell.swift in Sources */,
 				65585B9A2204748300D54250 /* RoundedButton.swift in Sources */,
+				65CC201B220CA8C50040EE74 /* ContactViewController.swift in Sources */,
 				650427AC21FF458D00B43A3E /* AppDelegate.swift in Sources */,
 				65585B9E2204A73F00D54250 /* ModalViewController.swift in Sources */,
 				650427CE21FF483100B43A3E /* PetTableViewController.swift in Sources */,

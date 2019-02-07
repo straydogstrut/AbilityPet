@@ -41,6 +41,8 @@ class PetTableViewController: UITableViewController {
         loadPetsFromPlist()
         filteredPets = allPets // show all pets by default
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
     }
 
     // MARK: - Table view data source

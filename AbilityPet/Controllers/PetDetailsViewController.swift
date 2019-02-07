@@ -30,8 +30,12 @@ class PetDetailsViewController: UIViewController {
     @IBOutlet weak var contactButton: UIButton!
 
     @IBAction func askButtonTouched(_ sender: UIButton) {
-        print("send email")
         
+        if let url = URL(string: "http://www.abilitynet.org.uk") {
+            UIApplication.shared.open(url, options: [:])
+        }
+       
+        /*
         let email = "foo@bar.com"
         if let url = URL(string: "mailto:\(email)") {
             if #available(iOS 10.0, *) {
@@ -40,6 +44,7 @@ class PetDetailsViewController: UIViewController {
                 UIApplication.shared.openURL(url)
             }
         }
+ */
     }
     
     override func viewDidLoad() {
@@ -81,7 +86,7 @@ class PetDetailsViewController: UIViewController {
 
 extension PetDetailsViewController {
     func applyAccessibility(){
-        
+    /*
         if petLiked {
             petLikeButton.accessibilityLabel = "Liked"
             petLikeButton.accessibilityTraits = UIAccessibilityTraits.button
@@ -89,6 +94,8 @@ extension PetDetailsViewController {
             petLikeButton.accessibilityLabel = "Not Liked"
             petLikeButton.accessibilityTraits = UIAccessibilityTraits.button
         }
-        contactButton.accessibilityHint = "Opens Mail"
+        
+ */
     }
+ 
 }
