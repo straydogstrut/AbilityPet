@@ -73,6 +73,15 @@ class PetTableViewController: UITableViewController {
         cell.photoImageView.image = pet.photo
         cell.locationLabel.text = pet.location
         
+        // fake new arrival labels for the purposes of this example
+        let showNewArrival = Bool.random()
+        print(showNewArrival)
+        if showNewArrival {
+            cell.newArrivalLabel.isHidden = true
+        } else {
+            cell.newArrivalLabel.isHidden = false
+        }
+        
         return cell
     }
     

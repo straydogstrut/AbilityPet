@@ -12,11 +12,7 @@ class ModalViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var aboutText: UITextView!
     @IBAction func dismissModal(_ sender: Any) {
-        /*
-        if let url = URL(string: "http://www.abilitynet.org.uk") {
-            UIApplication.shared.open(url, options: [:])
-        }
-        */
+        
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
