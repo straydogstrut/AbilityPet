@@ -25,36 +25,35 @@ class PetDetailsViewController: UIViewController {
     @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petDescriptionTextView: UITextView!
-    
     @IBOutlet weak var petStatsTextView: UITextView!
+    
     @IBOutlet weak var contactButton: UIButton!
-
+    @IBOutlet weak var alertButton: UIButton!
+    
     @IBAction func askButtonTouched(_ sender: UIButton) {
         
         if let url = URL(string: "http://www.abilitynet.org.uk") {
             UIApplication.shared.open(url, options: [:])
         }
        
-        /*
-        let email = "foo@bar.com"
-        if let url = URL(string: "mailto:\(email)") {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }
- */
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
+        applyAccessibility()
+    }
+    
+    
+    
+   // MARK: Private methods
+    func setupView(){
         petImageView.isAccessibilityElement = true
         petImageView.image = petImage
         petNameLabel.text = "Hi, I'm " + (petName)
         petDescriptionTextView.text = petDescription
         petLiked(false)
-        
         
         let petGender = petStats.object(forKey: "gender") as! String
         let petBreed = petStats.object(forKey: "breed") as! String
@@ -62,13 +61,20 @@ class PetDetailsViewController: UIViewController {
         let petPersonality = petStats.object(forKey: "personality") as! String
         
         petStatsTextView.text = "Gender: " + petGender + "\n" +
-                                "Breed: " + petBreed + "\n" +
-                                "Age: " + petAge + "\n" +
-                                "Personality: " + petPersonality
-       
+            "Breed: " + petBreed + "\n" +
+            "Age: " + petAge + "\n" +
+            "Personality: " + petPersonality
+        
+        // randomise alert button for the purposes of this example
+        let showAlertButton = Bool.random()
+        
+        if showAlertButton {
+            alertButton.isHidden = true
+        } else {
+            alertButton.isHidden = false
         }
+    }
     
-   // MARK: Private methods
     func petLiked(_ liked: Bool){
         if liked {
             petLikeButton.setImage(UIImage(named:"heart_red"), for: .normal)
@@ -77,10 +83,11 @@ class PetDetailsViewController: UIViewController {
             petLikeButton.setImage(UIImage(named:"heart_white"), for: .normal)
             petLiked = false
         }
-        applyAccessibility()
+       // applyAccessibility()
     }
-
 }
+
+
 
 // MARK: Accessibility
 
@@ -94,8 +101,8 @@ extension PetDetailsViewController {
             petLikeButton.accessibilityLabel = "Not Liked"
             petLikeButton.accessibilityTraits = UIAccessibilityTraits.button
         }
+         */
         
- */
     }
  
 }

@@ -20,6 +20,7 @@
 		6527ABFD2201039600E90B7E /* pets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6527ABFC2201039600E90B7E /* pets.plist */; };
 		65585B9A2204748300D54250 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585B992204748300D54250 /* RoundedButton.swift */; };
 		65585B9E2204A73F00D54250 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65585B9D2204A73F00D54250 /* ModalViewController.swift */; };
+		6576B81E2211FA7500C04F25 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576B81D2211FA7500C04F25 /* AlertViewController.swift */; };
 		65CC201B220CA8C50040EE74 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC201A220CA8C50040EE74 /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,8 +50,10 @@
 		650427CF21FF48C100B43A3E /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		6527ABFA2200D54400E90B7E /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
 		6527ABFC2201039600E90B7E /* pets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pets.plist; sourceTree = "<group>"; };
+		654D585E22120CD700FDFBCA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		65585B992204748300D54250 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		65585B9D2204A73F00D54250 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		6576B81D2211FA7500C04F25 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		65CC201A220CA8C50040EE74 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = AbilityPet/Controllers/ContactViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -75,6 +78,7 @@
 		6504279F21FF458D00B43A3E = {
 			isa = PBXGroup;
 			children = (
+				654D585E22120CD700FDFBCA /* README.md */,
 				650427AA21FF458D00B43A3E /* AbilityPet */,
 				650427BF21FF458E00B43A3E /* AbilityPetTests */,
 				650427A921FF458D00B43A3E /* Products */,
@@ -121,6 +125,7 @@
 				650427CD21FF483100B43A3E /* PetTableViewController.swift */,
 				6527ABFA2200D54400E90B7E /* PetDetailsViewController.swift */,
 				65585B9D2204A73F00D54250 /* ModalViewController.swift */,
+				6576B81D2211FA7500C04F25 /* AlertViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				650427D021FF48C100B43A3E /* Pet.swift in Sources */,
 				6527ABFB2200D54400E90B7E /* PetDetailsViewController.swift in Sources */,
 				650427AE21FF458D00B43A3E /* WelcomeViewController.swift in Sources */,
+				6576B81E2211FA7500C04F25 /* AlertViewController.swift in Sources */,
 				650427CC21FF45EF00B43A3E /* PetTableViewCell.swift in Sources */,
 				65585B9A2204748300D54250 /* RoundedButton.swift in Sources */,
 				65CC201B220CA8C50040EE74 /* ContactViewController.swift in Sources */,
