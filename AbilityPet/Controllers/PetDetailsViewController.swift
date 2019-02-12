@@ -25,6 +25,10 @@ class PetDetailsViewController: UIViewController {
     @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petDescriptionTextView: UITextView!
+    @IBOutlet weak var petGenderLabel: UILabel!
+    @IBOutlet weak var petBreedLabel: UILabel!
+    @IBOutlet weak var petAgeLabel: UILabel!
+    
     @IBOutlet weak var petStatsTextView: UITextView!
     
     @IBOutlet weak var contactButton: UIButton!
@@ -51,10 +55,14 @@ class PetDetailsViewController: UIViewController {
     func setupView(){
         petImageView.isAccessibilityElement = true
         petImageView.image = petImage
+        petLiked(false)
         petNameLabel.text = "Hi, I'm " + (petName)
         petDescriptionTextView.text = petDescription
-        petLiked(false)
         
+        petGenderLabel.text = (petStats.object(forKey: "gender") as! String)
+        petBreedLabel.text = (petStats.object(forKey: "breed") as! String)
+        petAgeLabel.text = (petStats.object(forKey: "age") as! String)
+        /*
         let petGender = petStats.object(forKey: "gender") as! String
         let petBreed = petStats.object(forKey: "breed") as! String
         let petAge = petStats.object(forKey: "age") as! String
@@ -64,6 +72,7 @@ class PetDetailsViewController: UIViewController {
             "Breed: " + petBreed + "\n" +
             "Age: " + petAge + "\n" +
             "Personality: " + petPersonality
+        */
         
         // randomise alert button for the purposes of this example
         let showAlertButton = Bool.random()
@@ -83,7 +92,6 @@ class PetDetailsViewController: UIViewController {
             petLikeButton.setImage(UIImage(named:"heart_white"), for: .normal)
             petLiked = false
         }
-       // applyAccessibility()
     }
 }
 

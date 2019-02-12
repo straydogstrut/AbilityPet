@@ -74,7 +74,7 @@ class PetTableViewController: UITableViewController {
         cell.photoImageView.image = pet.photo
         cell.locationLabel.text = pet.location
         
-        // mark the second cell as a new arrival for demo purposes
+        // mark the second cell as a 'new arrival' for demo purposes
        
         if indexPath.row == 1 {
             cell.newArrivalLabel.isHidden = false
