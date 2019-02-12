@@ -9,12 +9,12 @@ This practical exercise will introduce some of the different accessibility consi
 You will require the following to complete this exercise:
 
 ### System Environment
-* iOS device running 
+* iOS device running ##
 * macOS device running macOS 10.7 (MacOS 10 X “Lion”) and XCode 4.2
 * VoiceOver (built-in to iOS and macOS devices as standard)
 
 ### Project Files
-* Download the AbilityPet XCode project from GitHub here
+* Download the AbilityPet XCode project from GitHub [here](https://github.com/straydogstrut/AbilityPet)
 
 AbilityPet is a simple fictional app that allows users to search for pets to adopt. It’s a single view application with three main viewControllers that includes a tableView, images,  labels and both UIKit and custom controls.
 
@@ -76,8 +76,7 @@ Explore the app using VoiceOver and note the following issues:
 * Hint - The like button on the pet detail page is announced as “heart red” and “heart white” when toggled
 * Trait - The Ask About Me button on the pet detail page opens Safari unexpectedly
 * Nesting - The “new arrival” icon in the tableView is not announced
-* *Grouping – Pet attributes and their associated values are read individually (UIAccessibilityElement)*
-* *Modality – The alert dialog does not hold focus*
+* Grouping – Pet attributes and their associated values are read individually (UIAccessibilityElement)
 * *Form validation – Error messages on the contact form are not announced by VoiceOver (Label and Hint)*
 
 We will address these in the following sections.
@@ -91,7 +90,7 @@ Since these imageViews are populated programmatically, we have to set the access
 
 `petImageView.accessibilityLabel = “Tortoiseshell cat”`
 
-### The like button on the pet detail page is announced as “heart red” and “heart white” when toggled
+### The like button on the pet detail page is announced as “heart red button” and “heart white button” when toggled
 The like button represented by a heart that can be toggled on and off allows users to save pets they’re interested in to revisit later (functionality not built in to this version of the app). However the button is announced as heart red and heart white when toggled. This is because the button has no label so the file name is being read. More than that though, it’s not obvious what action this button performs.
 An `accessibilityHint` can be used to describe the result of performing an action on the control. This can be set in the Storyboard under Accessibility > Hint or via code:
 
@@ -110,21 +109,19 @@ The reason for this is parent views set as accessibility elements hide any child
 We can fix this either by removing the Accessibility enabled tag from the View in the Storyboard inspector or by removing the parent view entirely.
 
 ### Pet attributes and their associated values are read individually
-Although they are visually associated, pet attributes such as Breed and Age are individual elements to Assistive Technology meaning that VoiceOver reads them separately. User have to swipe twice to through each pair of attributes, when it would make more sense to hear them read out together.
+Although they are visually associated, pet attributes such as Breed and Age are individual elements to Assistive Technology meaning that VoiceOver reads them separately. Users have to swipe twice to through each pair of attributes, when it would make more sense to hear them read out together.
 
-We can group these items as a `UIAccessibilityElement`
+We can group these items under a parent view, however we know that parent views set as accessibilityElements hide their accessibility children. We can however, combine the labels in an `UIAccessibilityElement` and set this as the `accessibilityLabel` of the parent view:
 
-### The alert dialog does not receive focus
-When the modal alert dialog on the Pet Details screen is shown, VoiceOver does not automatically move focus to it and it is still possible to interact with the Ask About Me button and to have VoiceOver read the content of the parent view.
-
-We can use the accessibilityViewIsModal Boolean to indicate to VoiceOver that it should ignore the other sibling views of the alert view:
-
-`alertDialog.accessibilityViewIsModal = true`
+```
+genderStatView.isAccessibilityElement = true // the parent view
+genderStatView.accessibilityLabel = "\(petGenderTitle.text!), \(petGenderLabel.text!)" // combine the labels
+```
 
 ### Error messages on the contact form are not announced by VoiceOver
 In the Contact Us screen, when the user tries to submit the form with incomplete fields, error messages are displayed beside each field. However, although visually the errors are associated with their relevant fields, VoiceOver is not aware of this and announces them separately when the users moves through the form.
 
-We can add Labels and Hints to associate these and improve the experience for VoiceOver users
+We can add Labels and Hints to associate these and improve the experience for VoiceOver users.
 
 ## Xcode Accessibility Inspector
 Xcode comes with the Accessibility Inspector which allows you to identify the accessibility properties of objects under the mouse cursor 
@@ -144,23 +141,30 @@ The accessibility inspector has a toolbar across the top with three areas of int
 
 Explore the app with the Accessibility Inspector and run an audit on each of the different views. The Accessibility Inspector will highlight the following issues:
 
-* *Dynamic Font Sizes are unsupported*
-* *Contrast Failure*
-* *Touch Area insufficient*
+* Dynamic Font Sizes are unsupported
+* Contrast Failure
+* Hit Area insufficient
 
 We will address these in the following sections:
 
 ### Dynamic Font Sizes are unsupported
 The text in the New Arrival labels is not dynamic and does not resize when the user changes the font size (you can see this by changing the Font Size in the Accessibility Inspector).
 
-We can fix this by choosing Automatically Adjusts Font in the attributes Inspector and selecting one of the Font Styles other than the System font styles.
+We can fix this by choosing **Automatically Adjusts Font** in the attributes Inspector and selecting one of the Font Styles other than the System font styles.
 
 However, you will notice that the New Arrival label does not scale with the font. If using Auto Constraints, we need to set constraints on the top/right of the label, and a resizable leading space. We could also embed the label in another view with constraints to give some padding around the label text.
 
 ### Contrast Failure
-The Accessibility Inspector is warning that the description text for individual pets fails the contrast requirements. Adjust the font colour of the description text.
+The Accessibility Inspector is warns that the white text on lighter green background found in the Navigation Bar fails the 4:51 contrast ratio that Apple recommends. Also, although it does not throw a warning in the Inspector, the contrast of white text on darker green of the buttons only passes at 14pt and 18pt font sizes.
 
-### Touch Area insufficient
+To fix this, adjust the font colour or the background colour of the app until the contrast passes. The Color Contrast Calculator found under **Accessibility Inspector > Window > Show Color Contrast Calculator** can be helpful here.
+
+### Hit Area insufficient
+The hit area of the alert button is smaller than the recommended 44px in the Apple Developer guidelines. We can fix this by setting the button size to 44px, updating the constraints, and using the UIImageInsets property to resize the image inside to its original size. imageEdgeInsets can be set in the Storyboard or via code:
+
+`alertButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)`
 
 ## Summary
-This exercise has 
+This exercise has introduced some basic iOS accessibility considerations and suggested Swift and Storyboard options to address these. Key accessibility elements such as Labels, Hints and Traits have been introduced, and tools to confirm support for Dynamic Font Sizes and Contrast Ratios have also been covered.
+
+For more information on Accessibility support in iOS, see the [Apple Developer Documentation](https://developer.apple.com/accessibility/).

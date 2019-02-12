@@ -25,8 +25,15 @@ class PetDetailsViewController: UIViewController {
     @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petDescriptionTextView: UITextView!
+    
+    @IBOutlet weak var petGenderTitle: UILabel!
     @IBOutlet weak var petGenderLabel: UILabel!
+    @IBOutlet weak var genderStatView: UIView!
+    
+    @IBOutlet weak var petBreedTitle: UILabel!
     @IBOutlet weak var petBreedLabel: UILabel!
+    
+    @IBOutlet weak var petAgeTitle: UILabel!
     @IBOutlet weak var petAgeLabel: UILabel!
     
     @IBOutlet weak var petStatsTextView: UITextView!
@@ -62,17 +69,7 @@ class PetDetailsViewController: UIViewController {
         petGenderLabel.text = (petStats.object(forKey: "gender") as! String)
         petBreedLabel.text = (petStats.object(forKey: "breed") as! String)
         petAgeLabel.text = (petStats.object(forKey: "age") as! String)
-        /*
-        let petGender = petStats.object(forKey: "gender") as! String
-        let petBreed = petStats.object(forKey: "breed") as! String
-        let petAge = petStats.object(forKey: "age") as! String
-        let petPersonality = petStats.object(forKey: "personality") as! String
         
-        petStatsTextView.text = "Gender: " + petGender + "\n" +
-            "Breed: " + petBreed + "\n" +
-            "Age: " + petAge + "\n" +
-            "Personality: " + petPersonality
-        */
         
         // randomise alert button for the purposes of this example
         let showAlertButton = Bool.random()
@@ -101,15 +98,7 @@ class PetDetailsViewController: UIViewController {
 
 extension PetDetailsViewController {
     func applyAccessibility(){
-    /*
-        if petLiked {
-            petLikeButton.accessibilityLabel = "Liked"
-            petLikeButton.accessibilityTraits = UIAccessibilityTraits.button
-        } else {
-            petLikeButton.accessibilityLabel = "Not Liked"
-            petLikeButton.accessibilityTraits = UIAccessibilityTraits.button
-        }
-         */
+    
         
     }
  
