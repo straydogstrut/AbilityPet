@@ -43,6 +43,7 @@ class PetTableViewController: UITableViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
+        
     }
 
     // MARK: - Table view data source
@@ -73,13 +74,12 @@ class PetTableViewController: UITableViewController {
         cell.photoImageView.image = pet.photo
         cell.locationLabel.text = pet.location
         
-        // fake new arrival labels for the purposes of this example
-        let showNewArrival = Bool.random()
-        print(showNewArrival)
-        if showNewArrival {
-            cell.newArrivalLabel.isHidden = true
-        } else {
+        // mark the second cell as a new arrival for demo purposes
+       
+        if indexPath.row == 1 {
             cell.newArrivalLabel.isHidden = false
+        } else {
+            cell.newArrivalLabel.isHidden = true
         }
         
         return cell

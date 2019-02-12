@@ -114,8 +114,8 @@ Although they are visually associated, pet attributes such as Breed and Age are 
 
 We can group these items as a `UIAccessibilityElement`
 
-### The alert dialog does not hold focus
-When the modal alert dialog on the Pet Details screen is shown, it’s still possible to interact with the Ask About Me button and to have VoiceOver read the content of the parent view.
+### The alert dialog does not receive focus
+When the modal alert dialog on the Pet Details screen is shown, VoiceOver does not automatically move focus to it and it is still possible to interact with the Ask About Me button and to have VoiceOver read the content of the parent view.
 
 We can use the accessibilityViewIsModal Boolean to indicate to VoiceOver that it should ignore the other sibling views of the alert view:
 
@@ -151,7 +151,11 @@ Explore the app with the Accessibility Inspector and run an audit on each of the
 We will address these in the following sections:
 
 ### Dynamic Font Sizes are unsupported
-The text in the New Arrival labels is not dynamic and will overlap the background of the
+The text in the New Arrival labels is not dynamic and does not resize when the user changes the font size (you can see this by changing the Font Size in the Accessibility Inspector).
+
+We can fix this by choosing Automatically Adjusts Font in the attributes Inspector and selecting one of the Font Styles other than the System font styles.
+
+However, you will notice that the New Arrival label does not scale with the font. If using Auto Constraints, we need to set constraints on the top/right of the label, and a resizable leading space. We could also embed the label in another view with constraints to give some padding around the label text.
 
 ### Contrast Failure
 The Accessibility Inspector is warning that the description text for individual pets fails the contrast requirements. Adjust the font colour of the description text.

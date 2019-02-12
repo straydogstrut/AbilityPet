@@ -193,42 +193,38 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-PT-twJ">
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-PT-twJ">
                                             <rect key="frame" x="209" y="11" width="150" height="20"/>
-                                            <subviews>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Arrival" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnN-a8-bmc" userLabel="New Arrival">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="SgE-8R-qz1"/>
-                                                        <constraint firstAttribute="height" constant="30" id="YdD-8l-MjM"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <accessibility key="accessibilityConfiguration">
                                                 <bool key="isElement" value="YES"/>
                                             </accessibility>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="PnN-a8-bmc" secondAttribute="trailing" id="G2W-zv-Wb7"/>
-                                                <constraint firstItem="PnN-a8-bmc" firstAttribute="top" secondItem="1VK-PT-twJ" secondAttribute="top" id="aEL-AR-1Dm"/>
-                                                <constraint firstItem="PnN-a8-bmc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1VK-PT-twJ" secondAttribute="leading" id="yXC-Wq-VR2"/>
-                                            </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Arrival" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnN-a8-bmc" userLabel="New Arrival">
+                                            <rect key="frame" x="271.5" y="11" width="87.5" height="30"/>
+                                            <color key="backgroundColor" red="0.52695208790000003" green="0.76275116210000005" blue="0.3190083802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JfV-Ln-mfu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="tintColor" red="0.52695208787918091" green="0.76275116205215454" blue="0.31900838017463684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="1VK-PT-twJ" firstAttribute="trailing" secondItem="xNg-Zw-46Z" secondAttribute="trailing" id="0Wq-eM-0L3"/>
+                                        <constraint firstItem="PnN-a8-bmc" firstAttribute="top" secondItem="tXW-py-NRr" secondAttribute="topMargin" id="56W-TF-cPB"/>
                                         <constraint firstAttribute="bottom" secondItem="rKC-tK-DuP" secondAttribute="bottom" constant="39.5" id="5fl-qw-PtZ"/>
+                                        <constraint firstItem="PnN-a8-bmc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tXW-py-NRr" secondAttribute="leading" constant="20" symbolic="YES" id="9W3-wW-3JQ"/>
                                         <constraint firstItem="Iaz-0j-8Nx" firstAttribute="bottom" secondItem="tXW-py-NRr" secondAttribute="bottomMargin" id="AE1-OP-dFt"/>
+                                        <constraint firstItem="PnN-a8-bmc" firstAttribute="trailing" secondItem="tXW-py-NRr" secondAttribute="trailingMargin" id="BYb-0S-pSJ"/>
                                         <constraint firstItem="rKC-tK-DuP" firstAttribute="top" secondItem="xNg-Zw-46Z" secondAttribute="bottom" constant="8" symbolic="YES" id="F34-NF-FpS"/>
                                         <constraint firstItem="1VK-PT-twJ" firstAttribute="top" secondItem="xNg-Zw-46Z" secondAttribute="top" id="H4X-74-Nxx"/>
                                         <constraint firstItem="xNg-Zw-46Z" firstAttribute="trailing" secondItem="rKC-tK-DuP" secondAttribute="trailing" id="UKz-YP-p0x"/>
                                         <constraint firstAttribute="bottom" secondItem="1VK-PT-twJ" secondAttribute="bottom" constant="418.5" id="dsF-7Q-360"/>
                                         <constraint firstItem="rKC-tK-DuP" firstAttribute="trailing" secondItem="tXW-py-NRr" secondAttribute="trailingMargin" id="f9t-ir-fZ2"/>
                                         <constraint firstItem="Iaz-0j-8Nx" firstAttribute="trailing" secondItem="rKC-tK-DuP" secondAttribute="trailing" id="is4-o9-fG4"/>
+                                        <constraint firstItem="PnN-a8-bmc" firstAttribute="top" secondItem="1VK-PT-twJ" secondAttribute="top" id="lFY-BT-6jt"/>
                                         <constraint firstItem="Iaz-0j-8Nx" firstAttribute="leading" secondItem="rKC-tK-DuP" secondAttribute="leading" id="pKs-aj-a22"/>
                                         <constraint firstItem="1VK-PT-twJ" firstAttribute="leading" secondItem="tXW-py-NRr" secondAttribute="leading" constant="209" id="pOd-mE-v4P"/>
                                         <constraint firstItem="rKC-tK-DuP" firstAttribute="leading" secondItem="tXW-py-NRr" secondAttribute="leadingMargin" id="tQN-Ds-XT9"/>
@@ -613,7 +609,7 @@ For more information, please visit our website: http://www.abilitynet.org.uk/</s
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjA-p7-ads">
                                 <rect key="frame" x="18" y="143" width="341" height="426"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BHs-9r-okh" userLabel="Alert Text">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHs-9r-okh" userLabel="Alert Text">
                                         <rect key="frame" x="20" y="46" width="300" height="302"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -633,6 +629,7 @@ If this is you, we kindly ask that you take a look at some of our other resident
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ndC-xm-K0t"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Okay">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
