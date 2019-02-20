@@ -31,6 +31,6 @@ class Pet {
         // failsafe incase properties are empty
         if name.isEmpty {
             return nil
-        }
+        } 
     }
 }

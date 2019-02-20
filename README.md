@@ -19,12 +19,12 @@ You will require the following to complete this exercise:
 AbilityPet is a simple fictional app that allows users to search for pets to adopt. It’s a single view application with three main viewControllers that includes a tableView, images,  labels and both UIKit and custom controls.
 
 The key areas of interest are:
-`PetWelcomeViewController.swift` - Manages the first interactive screen of the app (Welcome) which contains buttons to view the list of pets available, contact the fictional company, and show a modal dialog with more information about AbilityPet.
-`PetListViewController.swift` - Manages a tableView listing the pets available for adoption and their photos, populated from the pets array. The newest arrivals are indicated with a label.
-`PetDetailViewController.swift` - Manages the detail view of a particular pet containing an image of the pet, a Label for the pet name, and textViews with a description and vital statistics. Also contains a button to open an enquiry form and a custom button to like a particular pet.
-`PetCell.swift` - Defines a tableView cell that contains an image and labels for the pet name and location
-`Pet.swift` - Is the model object representing a pet. It contains properties such as petName, petLocation, petPhoto, and vital statistics such as breed, age and gender.
-`petInfo.plist` - Is a property list containing an array of dictionaries with information about each pet including their name, photo, age, breed, gender and personality.
+`PetWelcomeViewController.swift` - Manages the first interactive screen of the app (Welcome) which contains buttons to view the list of pets available, contact the fictional company, and show a modal dialog with more information about AbilityPet.  
+`PetListViewController.swift` - Manages a tableView listing the pets available for adoption and their photos, populated from the pets array. The newest arrivals are indicated with a label.  
+`PetDetailViewController.swift` - Manages the detail view of a particular pet containing an image of the pet, a Label for the pet name, and textViews with a description and vital statistics. Also contains a button to open an enquiry form and a custom button to like a particular pet.  
+`PetCell.swift` - Defines a tableView cell that contains an image and labels for the pet name and location.  
+`Pet.swift` - Is the model object representing a pet. It contains properties such as petName, petLocation, petPhoto, and vital statistics such as breed, age and gender.  
+`petInfo.plist` - Is a property list containing an array of dictionaries with information about each pet including their name, photo, age, breed, gender and personality.  
 
 ## Enabling VoiceOver
 VoiceOver is Apple’s award-winning screen reader application and comes as standard on iOS and macOS platforms.  VoiceOver describes what appears on screen, including the content and controls within applications and documents. It allows users to control their Apple computers and portable devices using keyboard shortcuts, refreshable braille displays, touchscreens or trackpads as appropriate.
@@ -119,6 +119,7 @@ genderStatView.accessibilityLabel = "\(petGenderTitle.text!), \(petGenderLabel.t
 ```
 
 ### Error messages on the contact form are not announced by VoiceOver
+**TBC**
 In the Contact Us screen, when the user tries to submit the form with incomplete fields, error messages are displayed beside each field. However, although visually the errors are associated with their relevant fields, VoiceOver is not aware of this and announces them separately when the users moves through the form.
 
 We can add Labels and Hints to associate these and improve the experience for VoiceOver users.
