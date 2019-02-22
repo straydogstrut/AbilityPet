@@ -1,5 +1,5 @@
 //
-//  ModalViewController.swift
+//  AboutViewController.swift
 //  AbilityPet
 //
 //  Created by Daniel James Mclaughlan on 01/02/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModalViewController: UIViewController, UITextViewDelegate {
+class AboutViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var aboutText: UITextView!
     @IBAction func dismissModal(_ sender: Any) {
@@ -35,7 +35,7 @@ class ModalViewController: UIViewController, UITextViewDelegate {
 
 // MARK: Accessibility
 
-extension ModalViewController {
+extension AboutViewController {
     func applyAccessibility(){
         
     }
