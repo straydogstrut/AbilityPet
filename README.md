@@ -18,12 +18,17 @@ You will require the following to complete this exercise:
 
 AbilityPet is a simple fictional app that allows users to search for pets to adopt. It’s a single view application with three main viewControllers that includes a tableView, images,  labels and both UIKit and custom controls.
 
-The key areas of interest are:
+The key areas of interest are:  
 `PetWelcomeViewController.swift` - Manages the first interactive screen of the app (Welcome) which contains buttons to view the list of pets available, contact the fictional company, and show a modal dialog with more information about AbilityPet.  
+
 `PetListViewController.swift` - Manages a tableView listing the pets available for adoption and their photos, populated from the pets array. The newest arrivals are indicated with a label.  
+
 `PetDetailViewController.swift` - Manages the detail view of a particular pet containing an image of the pet, a Label for the pet name, and textViews with a description and vital statistics. Also contains a button to open an enquiry form and a custom button to like a particular pet.  
+
 `PetCell.swift` - Defines a tableView cell that contains an image and labels for the pet name and location.  
+
 `Pet.swift` - Is the model object representing a pet. It contains properties such as petName, petLocation, petPhoto, and vital statistics such as breed, age and gender.  
+
 `petInfo.plist` - Is a property list containing an array of dictionaries with information about each pet including their name, photo, age, breed, gender and personality.  
 
 ## Enabling VoiceOver
@@ -64,20 +69,20 @@ You can practice VoiceOver gestures by going to **Settings > General > Accessibi
 ## iOS Accessibility Properties and Attributes
 The following are some key accessibility properties and attributes that can be set via the Storyboard or in the Swift code for UI elements.
 
-`isAccessibleElement`    Indicates whether an element should be accessible to Assistive Technologies
-`accessibilityLabel`    Identifies the element, particularly important where an element does not already display a descriptive text label and for custom controls (e.g. “Volume Up”)
-`accessibilityTrait`    Provides a description for an element’s role or helps VoiceOver know how to interact with that element (e.g. accessibilityTraitButton)
-`accessibilityHint`    Provides a short description of what interacting with a control will do (e.g. “increases music volume”)
+`isAccessibleElement`    Indicates whether an element should be accessible to Assistive Technologies  
+`accessibilityLabel`    Identifies the element, particularly important where an element does not already display a descriptive text label and for custom controls (e.g. “Volume Up”)  
+`accessibilityTrait`    Provides a description for an element’s role or helps VoiceOver know how to interact with that element (e.g. accessibilityTraitButton)  
+`accessibilityHint`    Provides a short description of what interacting with a control will do (e.g. “increases music volume”)  
 
 ## Reviewing the AbilityPet app
 Explore the app using VoiceOver and note the following issues:
 
-* Labelling - Images of pets available are not descriptive
-* Hint - The like button on the pet detail page is announced as “heart red” and “heart white” when toggled
-* Trait - The Ask About Me button on the pet detail page opens Safari unexpectedly
-* Nesting - The “new arrival” icon in the tableView is not announced
-* Grouping – Pet attributes and their associated values are read individually (UIAccessibilityElement)
-* *Form validation – Error messages on the contact form are not announced by VoiceOver (Label and Hint)*
+* **Labelling** - Images of pets available are not descriptive
+* **Hints** - The like button on the pet detail page is announced as “heart red” and “heart white” when toggled
+* **Traits** - The Ask About Me button on the pet detail page opens Safari unexpectedly
+* **Nesting** - The “new arrival” icon in the tableView is not announced
+* **Grouping** – Pet attributes and their associated values are read individually (UIAccessibilityElement)
+* ***Form validation** – Error messages on the contact form are not announced by VoiceOver (Label and Hint)*
 
 We will address these in the following sections.
 
@@ -149,21 +154,20 @@ Explore the app with the Accessibility Inspector and run an audit on each of the
 We will address these in the following sections:
 
 ### Dynamic Font Sizes are unsupported
-The text in the New Arrival labels is not dynamic and does not resize when the user changes the font size (you can see this by changing the Font Size in the Accessibility Inspector).
+The text in the Info View text area is not dynamic and does not resize when the user changes the font size (you can see this by changing the Font Size in the Accessibility Inspector).
 
 We can fix this by choosing **Automatically Adjusts Font** in the attributes Inspector and selecting one of the Font Styles other than the System font styles.
 
-However, you will notice that the New Arrival label does not scale with the font. If using Auto Constraints, we need to set constraints on the top/right of the label, and a resizable leading space. We could also embed the label in another view with constraints to give some padding around the label text.
 
 ### Contrast Failure
-The Accessibility Inspector is warns that the white text on lighter green background found in the Navigation Bar fails the 4:51 contrast ratio that Apple recommends. Also, although it does not throw a warning in the Inspector, the contrast of white text on darker green of the buttons only passes at 14pt and 18pt font sizes.
+The Accessibility Inspector warns that the white text on lighter green background found in the Navigation Bar fails the 4:51 contrast ratio that Apple recommends. Also, although it does not throw a warning in the Inspector, the contrast of white text on darker green of the buttons only passes at 14pt and 18pt font sizes.
 
 To fix this, adjust the font colour or the background colour of the app until the contrast passes. The Color Contrast Calculator found under **Accessibility Inspector > Window > Show Color Contrast Calculator** can be helpful here.
 
 ### Hit Area insufficient
-The hit area of the alert button is smaller than the recommended 44px in the Apple Developer guidelines. We can fix this by setting the button size to 44px, updating the constraints, and using the UIImageInsets property to resize the image inside to its original size. imageEdgeInsets can be set in the Storyboard or via code:
+The hit area of the info button is smaller than the recommended 44px in the Apple Developer guidelines. We can fix this by setting the button size to 44px, updating the constraints, and (optionally) using the UIImageInsets property to resize the image inside to its original size. imageEdgeInsets can be set in the Storyboard or via code:
 
-`alertButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)`
+`infoButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)`
 
 ## Summary
 This exercise has introduced some basic iOS accessibility considerations and suggested Swift and Storyboard options to address these. Key accessibility elements such as Labels, Hints and Traits have been introduced, and tools to confirm support for Dynamic Font Sizes and Contrast Ratios have also been covered.

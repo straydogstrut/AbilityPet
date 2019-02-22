@@ -1,5 +1,5 @@
 //
-//  AlertViewController.swift
+//  InfoViewController.swift
 //  AbilityPet
 //
 //  Created by Daniel James Mclaughlan on 11/02/2019.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AlertViewController: UIViewController {
+class InfoViewController: UIViewController {
 
-    @IBAction func dismissAlertModal(_ sender: UIButton) {
+    
+    @IBAction func dismissInfoModal(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

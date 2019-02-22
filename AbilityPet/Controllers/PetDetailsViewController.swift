@@ -28,18 +28,18 @@ class PetDetailsViewController: UIViewController {
     
     @IBOutlet weak var petGenderTitle: UILabel!
     @IBOutlet weak var petGenderLabel: UILabel!
-    @IBOutlet weak var genderStatView: UIView!
+    @IBOutlet weak var genderStatView: UIStackView!
     
     @IBOutlet weak var petBreedTitle: UILabel!
     @IBOutlet weak var petBreedLabel: UILabel!
+    @IBOutlet weak var breedStatView: UIStackView!
     
     @IBOutlet weak var petAgeTitle: UILabel!
     @IBOutlet weak var petAgeLabel: UILabel!
-    
-    @IBOutlet weak var petStatsTextView: UITextView!
-    
+    @IBOutlet weak var ageStatView: UIStackView!
+        
     @IBOutlet weak var contactButton: UIButton!
-    @IBOutlet weak var alertButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
     
     @IBAction func askButtonTouched(_ sender: UIButton) {
         
@@ -70,15 +70,6 @@ class PetDetailsViewController: UIViewController {
         petBreedLabel.text = (petStats.object(forKey: "breed") as! String)
         petAgeLabel.text = (petStats.object(forKey: "age") as! String)
         
-        
-        // randomise alert button for the purposes of this example
-        let showAlertButton = Bool.random()
-        
-        if showAlertButton {
-            alertButton.isHidden = true
-        } else {
-            alertButton.isHidden = false
-        }
     }
     
     func petLiked(_ liked: Bool){
