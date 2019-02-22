@@ -18,6 +18,11 @@ You will require the following to complete this exercise:
 
 AbilityPet is a simple fictional app that allows users to search for pets to adopt. It’s a single view application with three main viewControllers that includes a tableView, images,  labels and both UIKit and custom controls.
 
+<img src="https://github.com/straydogstrut/AbilityPet/blob/master/Screenshots/Welcome.png" alt="Wecome Screen" width="100px" style="padding:5px 0;"><img src="https://github.com/straydogstrut/AbilityPet/blob/master/Screenshots/About%20Us.png"  alt="About Us Screen" width="100px" style="padding:5px 0;">
+<img src="https://github.com/straydogstrut/AbilityPet/blob/master/Screenshots/Meet%20Our%20Pets.png"  alt="Meet Our Pets Screen" width="100px" style="padding:5px 0;">
+<img src="https://github.com/straydogstrut/AbilityPet/blob/master/Screenshots/Contact%20Us.png"  alt="Contact Us Screen" width="100px" style="padding:5px 0;">
+<img src="https://github.com/straydogstrut/AbilityPet/blob/master/Screenshots/Pet%20Details.png"  alt="Pet Details" width="100px">
+
 The key areas of interest are:  
 `PetWelcomeViewController.swift` - Manages the first interactive screen of the app (Welcome) which contains buttons to view the list of pets available, contact the fictional company, and show a modal dialog with more information about AbilityPet.  
 
